@@ -11,6 +11,11 @@ class LinkedList {
     this.size = 0;
   }
 
+  setHead(head, size) {
+    this.head = head;
+    this.size = size;
+  }
+
   // add at th end of the list
   append(data) {
     const newNode = new Node(data);
@@ -50,8 +55,11 @@ class LinkedList {
       throw new Error("No node to delete");
     }
 
+    const deletedNode = this.head;
+
     this.head = this.head.next;
     this.size--;
+    return deletedNode;
   }
 
   //delete end
@@ -136,21 +144,23 @@ class LinkedList {
   }
 }
 
-const ll = new LinkedList();
+// const ll = new LinkedList();
 
-ll.append(1);
-ll.append(2);
-ll.append(3);
-ll.append(5);
+// ll.append(1);
+// ll.append(2);
+// ll.append(3);
+// ll.append(5);
 
-ll.printList();
+// ll.printList();
 
-ll.insertAt(4, 3);
-ll.printList();
-ll.deleteAt(3);
-ll.printList();
+// ll.insertAt(4, 3);
+// ll.printList();
+// ll.deleteAt(3);
+// ll.printList();
 
-const ll2 = new LinkedList();
-ll2.insertAt(4);
+// const ll2 = new LinkedList();
+// ll2.insertAt(4);
 
-ll2.printList();
+// ll2.printList();
+
+module.exports = LinkedList;
